@@ -17,6 +17,7 @@ build/
 .eggs/
 *.log
 flask_session/
+main.py/
 
 # ── Node / React / Vite ───────────────────────────────────────
 frontend/node_modules/
