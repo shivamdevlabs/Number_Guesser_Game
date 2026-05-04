@@ -1,5 +1,4 @@
-# ── Project-specific ──────────────────────────────────────────
-walkthrough.md
+main.py
 
 # ── Python / Flask ────────────────────────────────────────────
 __pycache__/
@@ -17,7 +16,6 @@ build/
 .eggs/
 *.log
 flask_session/
-main.py/
 
 # ── Node / React / Vite ───────────────────────────────────────
 frontend/node_modules/
