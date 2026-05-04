@@ -29,8 +29,6 @@ Guess the secret number between **1 and 1000**. The secret number lives server-s
 
 ```
 guessing_game/
-├── main.py                         ← Original CLI game (Python)
-│
 ├── backend/                        ← Flask REST API
 │   ├── app.py                      ← API routes & session management
 │   └── requirements.txt            ← Python dependencies
