@@ -5,7 +5,7 @@
 
 [[redirects]]
   from   = "/api/*"
-  to     = "https://PLACEHOLDER.onrender.com/api/:splat"
+  to     = "https://number-guesser-backend.onrender.com/api/:splat"
   status = 200
   force  = true
 
