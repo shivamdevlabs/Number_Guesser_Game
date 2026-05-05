@@ -1,12 +1,23 @@
+import os
 import random
 from flask import Flask, jsonify, request, session
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.secret_key = "guessing_game_secret_key_2024"
+
+# Use a strong secret key from environment in production
+app.secret_key = os.environ.get("SECRET_KEY", "guessing_game_dev_secret_key_2024")
+
+# Secure cookies over HTTPS in production
+IS_PRODUCTION = os.environ.get("RENDER") is not None
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
-app.config["SESSION_COOKIE_SECURE"] = False
-CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
+app.config["SESSION_COOKIE_SECURE"] = IS_PRODUCTION
+
+# Allow the frontend origin (Netlify URL in prod, localhost in dev)
+allowed_origins = os.environ.get(
+    "ALLOWED_ORIGINS", "http://localhost:5173"
+).split(",")
+CORS(app, origins=allowed_origins, supports_credentials=True)
 
 
 @app.route("/api/new-game", methods=["POST"])

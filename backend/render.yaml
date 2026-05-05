@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: number-guesser-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: https://PLACEHOLDER.netlify.app
